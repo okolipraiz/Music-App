@@ -1,0 +1,40 @@
+{% extends 'logbase.html' %}
+
+{% block content %}
+    {% load static %}
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/sign.css' %}">
+        <script></script>
+        <title>Login</title>
+        <h1>Welcome</h1>
+    </head>
+    <body>
+    <marquee behavior="medium" direction="left" style="background-color: ivory";><h4 style="color: blue"> LEADERS</h4></marquee>
+    <button><a href="/Music" class="btn btn-primary ml-2" style="color:white;">Home</a></button>
+          <div class="Mess">
+             <div class="Med">
+                {% for message in messages %}
+                <h3 style="color: white "> {{message}} </h3>
+                {% endfor %}
+             </div>
+        </div>
+        <form action="login" method="post">
+                {% csrf_token %}<br>
+            <div class="Log">
+                <div class="Form">
+                    <input type="text" name="username" placeholder="username"/><br>
+                    <input type="password" name="password" placeholder="password"/><br>
+                     <button>Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </body>
+    </html>
+
+{% endblock %}
