@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+     <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Slide</title>
+            <meta name="viewport" content="width=device-width, initial-scale =1.0">
+            <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+            <link rel="stylesheet" href="font-awesome.css">
+            <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+        </head>
+        <body>
+             <div class="cover">
+                <div class="final">
+                    <div id="container">
+                        <div id="sliderbox">
+                            <img src="{% static 'css/mic1.jpg' %}" height="400" width="900"/>
+                            <img src="{% static 'css/key2.jpg' %}" height="400" width="800"/>
+                            <img src="{% static 'css/earphone1.jpg' %}" height="400" width="800"/>
+                            <img src="{% static 'css/dj1.jpg' %}" height="400" width="770"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <h1>Songs</h1>
+            <ul>
+                {% for song in songs %}
+                    <li>{{ song.song_name }}</li>
+                {% endfor %}
+            </ul>
+        </body>
+     </html>
+{% endblock %}

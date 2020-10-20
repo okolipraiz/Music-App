@@ -1,0 +1,37 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/sign.css' %}">
+    <script></script>
+    <title>Title</title>
+</head>
+<body>
+    <a href="/Music" class="btn btn-primary ml-2" style="white">Home</a>
+     <div>
+        {% for message in messages %}
+        <h3 style="color:white"> {{message}} </h3>
+        {% endfor %}
+    </div>
+    <form action="register" method="post">
+            {% csrf_token %}<br>
+        <div class="Log">
+            <div class="Form">
+                    <input type="text" name="first_name" placeholder="First name"/><br>
+                    <input type="text" name="last_name" placeholder="Last name"/><br>
+                    <input type="text" name="username" placeholder="Username"/><br>
+                    <input type="email" name="email" placeholder="Email"/><br>
+                    <input type="password" name="password1" placeholder="Password"/><br>
+                    <input type="password" name="password2" placeholder="Confirm Password"/><br>
+                    <button>Submit</button>
+                    <p class="message"> If Already Registered? <a href="login" style="color: white">Login</a> </p>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>
